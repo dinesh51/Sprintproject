@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.attendance.entities.StudentEntity;
 import com.attendance.entities.Subject;
-import com.attendance.service.implementation.StudentService;
-import com.attendance.service.implementation.SubjectService;
+import com.attendance.service.StudentService;
+import com.attendance.service.SubjectService;
 
 @RestController
 public class StudentController {

@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.attendance.entities.Faculty;
 import com.attendance.entities.UserEntity;
-import com.attendance.service.implementation.FacultyService;
-import com.attendance.service.implementation.UserEntityService;
+import com.attendance.service.FacultyService;
+import com.attendance.service.UserEntityService;
 
 @RestController
 public class AdminController {

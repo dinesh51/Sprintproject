@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.attendance.entities.UserEntity;
-import com.attendance.service.implementation.UserEntityService;
+import com.attendance.service.UserEntityService;
 
 @RestController
 public class LoginController 

@@ -1,4 +1,4 @@
-package com.attendance.service.implementation;
+package com.attendance.service;
 
 import java.util.Optional;
 
