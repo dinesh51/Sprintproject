@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.attendance.entities.AttendanceEntity;
 import com.attendance.entities.StudentEntity;
-import com.attendance.service.AttendanceService;
-import com.attendance.service.StudentService;
+import com.attendance.service.implementation.AttendanceService;
+import com.attendance.service.implementation.StudentService;
 
 @RestController
 public class AttendanceController {

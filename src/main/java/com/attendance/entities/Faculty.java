@@ -35,9 +35,9 @@ public class Faculty extends UserEntity {
 	}
 
 	public Faculty(String name, String password, String confirmPassword, String mobileNo, int roleId,
-			String gender,String subject) 
+			String gender,String subject,String email) 
 	{
-		super( name, password, confirmPassword, mobileNo, roleId, gender);
+		super( name, password, confirmPassword, mobileNo, roleId, gender,email);
 		this.subject=subject;
 	}
 	

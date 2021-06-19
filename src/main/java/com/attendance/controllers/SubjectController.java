@@ -7,8 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 import com.attendance.entities.Subject;
-
-import com.attendance.service.SubjectService;
+import com.attendance.service.implementation.SubjectService;
 
 @RestController
 public class SubjectController {

@@ -13,7 +13,7 @@ import com.attendance.entities.Subject;
 import com.attendance.repository.AssignFacultyRepository;
 import com.attendance.repository.FacultyRepository;
 import com.attendance.repository.SubjectRepository;
-import com.attendance.service.AssignFacultyService;
+import com.attendance.service.implementation.AssignFacultyService;
 
 
 

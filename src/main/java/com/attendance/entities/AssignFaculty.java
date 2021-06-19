@@ -17,6 +17,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Cascade;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
@@ -55,8 +57,9 @@ public class AssignFaculty {
 		public void setTotalclasses(int totalclasses) {
 			this.totalclasses = totalclasses;
 		}
+		
 
-		@OneToOne(cascade = CascadeType.ALL)
+		@OneToOne(cascade = CascadeType.ALL,orphanRemoval = true)		
 		  private Faculty faculty;
 	
 		
