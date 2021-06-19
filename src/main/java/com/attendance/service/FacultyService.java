@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.attendance.entities.Faculty;
+import com.attendance.entities.UserEntity;
 import com.attendance.repository.FacultyRepository;
 
 @Service
@@ -14,35 +15,23 @@ public class FacultyService {
 	
 	
 	@Autowired
-	public FacultyRepository repof;
+	public FacultyRepository facultyRepository;
 	
 	public Faculty saveFaculty(Faculty faculty) {
 		
-		return	repof.save(faculty);
+		return	facultyRepository.save(faculty);
 }
 	
 	
 	
-	public  List<Faculty> getFaculty(){
+	public  List<UserEntity> getFaculty(){
 		
-		return	repof.findAll();
+		return	facultyRepository.findAllFaculties();
 			
 	}
-	
-	/*	private long id;
-	private String Name;
-	private String mobileNo;
-	private int roleId;
-	private String gender;
-	private String password;
-	private String confirmPassword;
-	subject;
-	*/
-	
-	
-	   public  Faculty updatefaculty(Faculty faculty){
+	   public  Faculty updateFaculty(Faculty faculty){
 	    	
-	    	Faculty existing=repof.findById((int) faculty.getId()).orElse(null);
+	    	Faculty existing=facultyRepository.findById((int) faculty.getId()).orElse(null);
 	    	existing.setName(faculty.getName());
 	    	existing.setMobileNo(faculty.getMobileNo());
 	    	existing.setRoleId(faculty.getRoleId());
@@ -52,8 +41,14 @@ public class FacultyService {
 	    	existing.setConfirmPassword(faculty.getConfirmPassword());
 
 	    	existing.setSubject(faculty.getSubject());
-	    	return repof.save(existing);
-	    	
-	    	
+	    	return facultyRepository.save(existing);	
 	    }
+	   
+	   public  String deleteFaculty(int id){
+			
+		   facultyRepository.deleteById(id);	
+			return "faculty removed successsfully";
+	}
+	   
+	   
 }

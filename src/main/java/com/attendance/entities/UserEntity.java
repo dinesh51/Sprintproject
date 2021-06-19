@@ -26,14 +26,23 @@ public class UserEntity {
 	private String gender;
 	private String password;
 	private String confirmPassword;
+	private String email;
 	
 	
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 	public UserEntity() {
 		super();
 	}
 
 	public UserEntity( String name, String password, String confirmPassword, String mobileNo, int roleId,
-			String gender) {
+			String gender,String email) {
 		super();		
 		this.Name = name;
 		this.password = password;
@@ -41,6 +50,7 @@ public class UserEntity {
 		this.mobileNo = mobileNo;
 		this.roleId = roleId;
 		this.gender = gender;
+		this.email = email;
 	}
 
 	

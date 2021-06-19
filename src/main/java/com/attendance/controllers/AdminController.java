@@ -3,7 +3,9 @@ package com.attendance.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,37 +20,62 @@ import com.attendance.service.UserEntityService;
 @RestController
 public class AdminController {
 	@Autowired
-	private UserEntityService serv;
+	private UserEntityService userService;
 	
 	@Autowired
-	private FacultyService facultyserv;
+	private FacultyService facultyService;
 	
 	  @PostMapping("/addAdmin")
 		public UserEntity addAdmin(@RequestBody UserEntity user) {
 			
-			return serv.saveproduct(user);
+			return userService.saveAdmin(user);
 		}
 	
+	  
+	   @GetMapping("/adminList")
+	    public List<UserEntity> adminList() {
+	        return userService.getAdminList();
+	    }
+	  
+	  
+	    @PutMapping("/updateAdmin")
+	    public UserEntity updateAdmin(@RequestBody UserEntity user) {
+	        return userService.updateAdmin(user);
+	    }
+	   
+	    
+
+	    @DeleteMapping("/deleteAdmin/{id}")
+	    public String deleteAdmin(@PathVariable int id) {
+	        return userService.deleteAdmin(id);
+	    }
+	
+	   
+	   
 	  
 	  @PostMapping("/addFaculty")
 		public Faculty addFaculty(@RequestBody Faculty faculty) {
 			
-			return facultyserv.saveFaculty(faculty);
+			return facultyService.saveFaculty(faculty);
 		}
 	
 	  
 	    @GetMapping("/Faculty")
-	    public List<Faculty> getFaculty() {
-	        return facultyserv.getFaculty();
+	    public List<UserEntity> getFacultyList() {
+	        return facultyService.getFaculty();
 	    }
 
 	
 	    
 	    @GetMapping("/updateFaculty")
-	    public Faculty updatefaculty(@RequestBody Faculty faculty) {
-	    	return facultyserv.updatefaculty(faculty);
+	    public Faculty updateFaculty(@RequestBody Faculty faculty) {
+	    	return facultyService.updateFaculty(faculty);
 	    }
 
+	    @DeleteMapping("/deleteFaculty/{id}")
+	    public String deleteFaculty(@PathVariable int id) {
+	        return facultyService.deleteFaculty(id);
+	    }
 	    
 	
 	  
